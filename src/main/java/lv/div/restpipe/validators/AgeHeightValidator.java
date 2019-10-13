@@ -6,19 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class AgeHeightValidator extends RestValidator<AgeHeightContract> {
 
-    private AgeHeightContract t;
+    @Override
+    public boolean validate(AgeHeightContract ageHeightContract) {
+        return ageHeightContract.getAge() > 18 &&
+               ageHeightContract.getHeight() > 100;
 
-    public AgeHeightContract getT() {
-        return t;
-    }
-
-    public void setT(AgeHeightContract t) {
-        this.t = t;
-    }
-
-    public boolean validate() {
-        return t.getAge() > 18 &&
-               t.getHeight() > 100;
     }
 
 }

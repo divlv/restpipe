@@ -6,19 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class NameSurnameValidator extends RestValidator<NameSurnameContract> {
 
-    private NameSurnameContract t;
+    @Override
+    public boolean validate(NameSurnameContract nameSurnameContract) {
+        return nameSurnameContract.getName().equalsIgnoreCase("n") &&
+               nameSurnameContract.getSurname().equalsIgnoreCase("s");
 
-    public NameSurnameContract getT() {
-        return t;
-    }
-
-    public void setT(NameSurnameContract t) {
-        this.t = t;
-    }
-
-    public boolean validate() {
-        return t.getName().equalsIgnoreCase("n") &&
-               t.getSurname().equalsIgnoreCase("s");
     }
 
 }

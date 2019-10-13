@@ -2,6 +2,7 @@ package lv.div.restpipe.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lv.div.restpipe.contracts.AgeHeightContract;
 import lv.div.restpipe.pipe.RestPipe;
 import lv.div.restpipe.responses.DefaultResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,11 @@ public class StringsRequestController {
     @GetMapping(value = "/strings")
     public ResponseEntity<DefaultResponse> getMethod() {
 
-        pipe.runValidation();
+        final AgeHeightContract t = new AgeHeightContract();
+        t.setAge(33);
+        t.setHeight(444);
+
+        pipe.process(t);
 
         DefaultResponse response = new DefaultResponse();
         response.setResponseType(200);
