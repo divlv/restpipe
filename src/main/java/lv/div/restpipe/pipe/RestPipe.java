@@ -14,13 +14,13 @@ public class RestPipe<T> {
     List<? extends RestValidator> validators;
 
     /**
-     * Main process "pipe". Validates and then processes incoming data
+     * Main process "pipe". Validate and then process incoming data
      *
      * @param t typed class parameter
      */
     public void process(T t) {
 
-        // Iterate through all validators to find the type-matched one:
+        // Iterate through all validators to find the type-match:
         for (RestValidator validator : validators) {
             final Type genericSuperclass = validator.getClass().getGenericSuperclass();
             final Type[] actualTypeArguments = ((ParameterizedTypeImpl) genericSuperclass).getActualTypeArguments();

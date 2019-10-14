@@ -8,6 +8,7 @@ public class NameSurnameValidator extends RestValidator<NameSurnameContract> {
 
     @Override
     public boolean validate(NameSurnameContract nameSurnameContract) {
+        // Dummy validation
         return nameSurnameContract.getName().equalsIgnoreCase("n") &&
                nameSurnameContract.getSurname().equalsIgnoreCase("s");
 

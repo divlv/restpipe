@@ -8,6 +8,7 @@ public class AgeHeightValidator extends RestValidator<AgeHeightContract> {
 
     @Override
     public boolean validate(AgeHeightContract ageHeightContract) {
+        // Dummy validation
         return ageHeightContract.getAge() > 18 &&
                ageHeightContract.getHeight() > 100;
 

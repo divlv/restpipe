@@ -22,6 +22,7 @@ public class StringsRequestController {
     @GetMapping(value = "/strings")
     public ResponseEntity<DefaultResponse> getMethod() {
 
+        // Dummy request data
         final AgeHeightContract t = new AgeHeightContract();
         t.setAge(33);
         t.setHeight(444);
